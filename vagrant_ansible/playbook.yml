@@ -1,0 +1,17 @@
+---
+- hosts: all
+  remote_user: remoto
+  become_user: root
+  become: true
+  tasks:
+    - name: actualizar apt upgrade
+      apt: upgrade=yes
+    - name: instalar apache
+      apt: name=apache2 state=present
+    - name: copy index.html
+      copy:
+        src: index.html
+        dest: /var/www/html/index.html
+        force: yes
+    - name: ejecutar un script de prueba
+      script: prueba.sh

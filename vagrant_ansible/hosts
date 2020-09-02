@@ -1,0 +1,10 @@
+[all]
+192.168.120.3
+
+[all:vars]
+ansible_user=remoto
+ansible_ssh_port=22
+ansible_ssh_password=1234
+ansible_ssh_private_key_file=/home/juane/.ssh/id_rsa
+ansible_sudo_password=vagrant
+ansible_become_password=1234
